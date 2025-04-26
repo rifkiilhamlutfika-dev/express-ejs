@@ -21,6 +21,10 @@ app.get("/rand", (req, res) => {
   //   res.render("random", { random: number }); that's correct
   res.render("random", { number });
 });
+app.get("/cats", (req, res) => {
+  const cats = ["jacky", "nobita", "conan", "aye"];
+  res.render("cats", { cats });
+});
 
 app.listen(port, () => {
   console.log(`Listening on host http://localhost:${port}`);

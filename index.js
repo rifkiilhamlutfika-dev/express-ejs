@@ -2,6 +2,8 @@ const path = require("path");
 const express = require("express");
 const port = 8080 || 3000;
 
+const tagsData = require("./data.json");
+
 const app = express();
 
 app.set("view engine", "ejs");
@@ -13,7 +15,10 @@ app.get("/", (req, res) => {
 
 app.get("/t/:tag", (req, res) => {
   const { tag } = req.params;
-  res.render("tag", { tag });
+  const data = tagsData[tag];
+
+  if (data) res.render("tag", { data });
+  else res.render("not_found", { tag });
 });
 
 app.get("/rand", (req, res) => {

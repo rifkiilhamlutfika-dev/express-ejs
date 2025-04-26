@@ -3,9 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= tag %> - Dev</title>
+    <title><%= data.title %> - Dev</title>
   </head>
   <body>
-    <h1><%= tag %> page</h1>
+    <% if (data.img) { %>
+    <img src="<%= data.img %>" alt="" />
+    <%}%>
+    <h1><%= data.title %> page</h1>
+    <h3>Followers <%= data.followers %></h3>
+    <h3><%= data.description %></h3>
+    <hr />
+    <%for(let post of data.posts) {%>
+    <article>
+      <p><%= post.title%> - <%= post.author%></p>
+    </article>
+    <%}%>
   </body>
 </html>

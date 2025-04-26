@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Homepage</h1>
-    <h3><%= 'Hello World'.toUpperCase() %></h3>
-    <p>20 + 6 = <%= 20 + 6 %></p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nisi
-      reprehenderit dicta dignissimos. Nulla dolorem quis officiis, ad,
-      voluptatum nemo animi expedita dignissimos, voluptas incidunt quod.
-      Dolorum laudantium repellat nostrum.
-    </p>
-  </body>
-</html>
+<%- include('partials/header',{dev:''}) %> <%- include('partials/navbar') %>
+<h1>Homepage</h1>
+<h3><%= 'Hello World'.toUpperCase() %></h3>
+<p>20 + 6 = <%= 20 + 6 %></p>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nisi
+  reprehenderit dicta dignissimos. Nulla dolorem quis officiis, ad, voluptatum
+  nemo animi expedita dignissimos, voluptas incidunt quod. Dolorum laudantium
+  repellat nostrum.
+</p>
+<%- include('partials/footer') %>
